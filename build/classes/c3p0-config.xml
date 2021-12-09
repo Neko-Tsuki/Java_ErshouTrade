@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+<!-- 默认配置 -->
+<default-config>
+    <!--加载驱动-->
+    <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+    <!--数据库url-->
+    <property name="jdbcUrl">jdbc:mysql://localhost:3306/ershou?serverTimezone=UTC</property>
+    <!--数据库用户名-->
+    <property name="user">root</property>
+    <!--数据库密码-->
+    <property name="password">admin</property>
+    <property name="initialPoolSize">50</property>
+    <property name="maxPoolSize">1000</property>
+    <property name="minPoolSize">50</property>
+    <property name="maxIdleTime">60</property>
+    <property name="maxStatements">50</property>
+    <property name="acquireIncrement">1</property>
+    <property name="acquireRetryAttempts">5</property>
+    <property name="acquireRetryDelay">1000</property>
+</default-config>
+</c3p0-config>
