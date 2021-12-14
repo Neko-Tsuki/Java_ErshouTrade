@@ -46,6 +46,21 @@ public class GoodsDao {
 		return list;
 	}
 	
+	//@普通用户查看商品
+	public List<Goods> selectAllGoodsGuest() {
+		List<Goods> list = new ArrayList<Goods>();
+		Connection conn = C3P0Utils.getCon();
+		QueryRunner queryRunner = new QueryRunner();
+		String sql = "select * from goods where review='1' and state='1'";
+		try {
+			list = queryRunner.query(conn, sql, new BeanListHandler<Goods>(Goods.class));
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		C3P0Utils.closeAll(conn);
+		return list;
+	}
 	//@商品數量（未實現）
 	public List<Goods> countGoods(int state){
 		List<Goods> list = new ArrayList<Goods>();
@@ -143,6 +158,7 @@ public class GoodsDao {
 		C3P0Utils.closeAll(conn);
 		return i;
 	}
+	
 	//@查詢所有上架通過商品
 	public List<Goods> selectAllGoodsOK(int u_id) {
 		List<Goods> list = new ArrayList<Goods>();
@@ -157,8 +173,21 @@ public class GoodsDao {
 		}
 		C3P0Utils.closeAll(conn);
 		return list;
-		
 	}
 	
-
+	//@查詢所有下架通過商品
+	public List<Goods> selectAllGoodsNope(int u_id) {
+		List<Goods> list = new ArrayList<Goods>();
+		QueryRunner queryRunner = new QueryRunner();
+		Connection conn = C3P0Utils.getCon();
+		String sql = "select * from goods where review='1' and u_id=? and state='0'";
+		try {
+			list = queryRunner.query(conn, sql, new BeanListHandler<Goods>(Goods.class), u_id);
+		} catch (Exception e) {
+			System.out.println(e);
+			// TODO: handle exception
+		}
+		C3P0Utils.closeAll(conn);
+		return list;
+	}
 }

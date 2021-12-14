@@ -25,7 +25,7 @@
 	    <div class="layui-submit larry-login">
 	    	<input type="submit" value="立即登陆" class="submit_btn"/>
 	    </div>
-	   
+	   <p><a href="login.jsp" style="color:white;">返回用户登陆</a>
 	</form>
 	   
 </div>

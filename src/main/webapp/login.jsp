@@ -26,9 +26,11 @@
 	    <div class="layui-submit larry-login">
 	    	<input type="submit" value="立即登陆" class="submit_btn"/>
 	    </div>
-	    <a href="register.jsp" style="color:white">没有账号，点此注册</a>
+
+	    <a href="register.jsp" style="color:white">没有账号，点此注册</a><br>
+	    <p><a href="login2.jsp" style="color:blue">管理员登陆</a>
 	</form>
-	   
+	
 </div>
 <script type="text/javascript" src="common/layui/lay/dest/layui.all.js"></script>
 <script type="text/javascript" src="js/login.js"></script>

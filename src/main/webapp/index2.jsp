@@ -31,7 +31,7 @@
             			out.print(admin.getName());%>，欢迎登录
             		</li>
 					<li class="layui-nav-item">
-						<a href="">
+						<a href="AdminLogoutServlet">
                         <i class="iconfont icon-exit"></i>
 						退出</a>
 					</li>
